@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <title>Products</title>
+</head>
+<body>
+<h4>{{error}}</h4>
+<h2>Products</h2>
+<a href="/">Main page</a>
+
+<form action="/product/create" method="post">
+    <input type="text" name="name">
+    <input type="text" name="code">
+    <input type="date" name="createDate">
+    <input type="date" name="shelfLife">
+    <input type="number" name="price">
+    <button type="submit">Add</button>
+</form>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Shelf life</th>
+        <th>Price</th>
+    </tr>
+
+    {{#products}}
+        <tr>
+            <td><a href="/product/{{id}}">{{name}}</a></td>
+            <td>{{code}}</td>
+            <td>{{shelfLife}}</td>
+            <td>{{price}}</td>
+        </tr>
+    {{/products}}
+
+</table>
+</body>
+</html>
